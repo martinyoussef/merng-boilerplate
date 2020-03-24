@@ -1,0 +1,19 @@
+{
+  "name": "tax-zen",
+  "version": "1.0.0",
+  "description": "A tax return app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "author": "Martin Y",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "graphql": "^14.6.0",
+    "mongoose": "^5.9.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
