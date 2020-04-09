@@ -4,6 +4,7 @@
   "description": "A boilerplate node app with Graphql, Apollo Server and Mongodb.",
   "main": "index.js",
   "scripts": {
+    "serve": "node index",
     "start": "nodemon index"
   },
   "author": "Martin Y",
