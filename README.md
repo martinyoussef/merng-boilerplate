@@ -1,19 +1,19 @@
-# GraphQL Server Boilerplate
+# MERNG Boilerplate
 
-A GraphQL server boilerplate made with Node.js, Apollo Server and MongoDB. The starting schema is based on a social media app with Users and Posts, with authentication middleware.
+A MERNG (MongoDB, Express, Node & Graphql) application boilerplate.
 
 ## Installation
 
 1. Clone project
 
 ```
-git clone https://github.com/martinyoussef/graphql-server-boilerplate.git
+git clone https://github.com/martinyoussef/merng-boilerplate.git
 ```
 
 2. cd into folder
 
 ```
-cd graphql-server-boilerplate
+cd merng-boilerplate
 ```
 
 3. Download dependencies
