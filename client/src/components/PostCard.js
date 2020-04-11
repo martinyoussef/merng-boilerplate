@@ -22,7 +22,7 @@ function PostCard({
   const { user } = useContext(AuthContext);
 
   return (
-    <Card>
+    <Card style={{ margin: "2rem" }}>
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {username}
@@ -38,7 +38,7 @@ function PostCard({
         <IconButton aria-label="comment" component={Link} to={`/posts/${id}`}>
           <MessageIcon />
         </IconButton>
-        <span>2 Comments</span>
+        <span>{commentCount} Comments</span>
 
         {user && user.username === username && <DeleteButton postId={id} />}
       </CardActions>
