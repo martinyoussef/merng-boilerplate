@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import moment from "moment";
+
+import { AuthContext } from "../context/auth";
+
+// Components
+import LikeButton from "./LikeButton";
 
 //MUI
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import IconButton from "@material-ui/core/IconButton";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import DeleteIcon from "@material-ui/icons/Delete";
 import MessageIcon from "@material-ui/icons/Message";
 import Typography from "@material-ui/core/Typography";
 
 function PostCard({
   post: { body, createdAt, id, username, likeCount, commentCount, likes }
 }) {
-  const likePost = () => console.log("Post liked!");
-  const commentOnPost = () => console.log("Comment made!");
+  const { user } = useContext(AuthContext);
+
   return (
     <Card>
       <CardContent>
@@ -27,14 +33,22 @@ function PostCard({
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="like post" onClick={likePost}>
-          <FavoriteIcon />
-        </IconButton>
-        <span>1 Like</span>
-        <IconButton aria-label="comment" onClick={commentOnPost}>
+        <LikeButton user={user} post={{ id, likes, likeCount }} />
+
+        <IconButton aria-label="comment" component={Link} to={`/posts/${id}`}>
           <MessageIcon />
         </IconButton>
         <span>2 Comments</span>
+
+        {user && user.username === username && (
+          <IconButton
+            color="secondary"
+            aria-label="like post"
+            onClick={() => console.log("Delete post")}
+          >
+            <DeleteIcon />
+          </IconButton>
+        )}
       </CardActions>
     </Card>
   );
